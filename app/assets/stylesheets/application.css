@@ -17,3 +17,6 @@
    font-family: "thrones";
    src: font-url('game_of_thrones.ttf') format("truetype");
  }
+ img {
+   width: 200px;
+ }
