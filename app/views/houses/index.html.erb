@@ -16,6 +16,8 @@
     <td><img src="<%= house.sigil_url %>"/></td>
     <td><%= house.territory %> </td>
     <td><%= link_to 'Show', house_path(house) %> </td>
+    <td><%= link_to 'Edit', edit_house_path(house) %> </td>
+    <td><%= link_to 'Red Wedding', house_path(house), method: :delete, data: {confirm: 'Do the Lannisters send their regards?'} %> </td>
   </tr>
   <% end %>
 </table>

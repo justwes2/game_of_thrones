@@ -15,4 +15,44 @@
   <%= @house.name %>
 </p>
 
+<h2>Characters</h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Quote</th>
+    <th>Image</th>
+    <th>House</th>
+  </tr>
+<% @house.characters.each do |character| %>
+<tr>
+  <td><%= character.name %> </td>
+    <td><%= character.quote %> </td>
+  <td><img src="<%= character.photo_url %>"/></td>
+  <td><%= character.house.name %> </td>
+  <td> <%= link_to 'Pay the many faced god', [character.house, character], method: :delete, data: {confirm: 'Are you sure>'} %> </td>
+</tr>
+<% end %>
+</table>
+
+
+<h2>Add a character:</h2>
+<%= form_for([@house, @house.characters.build]) do |f| %>
+<p>
+  <%= f.label :name %> <br>
+  <%= f.text_field :name %> <br>
+</p>
+<p>
+  <%= f.label :photo_url %> <br>
+  <%= f.text_field :photo_url %> <br>
+</p>
+<p>
+  <%= f.label :quote %> <br>
+  <%= f.text_field :quote %> <br>
+</p>
+<p>
+  <%= f.submit %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', edit_house_path(@house) %> |
 <%= link_to 'Back', houses_path %>
