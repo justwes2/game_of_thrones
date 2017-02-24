@@ -1,0 +1,23 @@
+<h1>New House</h1>
+
+<%=form_for :house, url: houses_path do |f| %>
+<p>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %>
+</p>
+<p>
+  <%= f.label :words %><br>
+  <%= f.text_field :words %>
+</p>
+<p>
+  <%= f.label :sigil_url %><br>
+  <%= f.text_field :sigil_url %>
+</p>
+<p>
+  <%= f.label :territory %><br>
+  <%= f.text_area :territory %>
+</p>
+<p>
+  <%= f.submit %>
+</p>
+<% end %>
